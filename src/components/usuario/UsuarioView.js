@@ -142,7 +142,7 @@ export const UsuarioView = () => {
                         <hr></hr>
                     </div>
                     <div className="scrollme">
-                        <table className="table table-stripped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
