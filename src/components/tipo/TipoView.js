@@ -131,40 +131,35 @@ export const TipoView = () => {
                     <div>
                         <hr></hr>
                     </div>
-                    <div>
-                    
-                    <table className="table">
-                        <thead>
-                            <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Nombre:</th>
-                            <th scope="col">Estado:</th>
-                            <th scope="col"></th>
-                            <th scope="col"><center>Modificar/Eliminar registro:</center></th>
-                            </tr>
-                        </thead>
-                            {
-                                tipoEquipos.map((tipoEquipo) => {
-                                    return (
-                                        <tbody>
-                                            <tr>
-                                            <th scope="row">
-                                            {
-                                                
-                                            }       
-                                            </th>
-                                            <td>{tipoEquipo.nombre}</td>
-                                            <td>{tipoEquipo.estado}</td>
-                                            <td></td>
-                                            <td>  
-                                                <center><Link to={`tipos/edit/${tipoEquipo._id}`}>Editar...</Link></center>    
-                                            </td>
-                                            </tr> 
-                                        </tbody>
-                                    )
-                                })
-                            }
-                    </table>    
+                    <div className="scrollme">
+                        <table className="table table-stripped">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre:</th>
+                                <th scope="col">Estado:</th>
+                                <th scope="col"></th>
+                                <th scope="col"><center>Modificar/Eliminar registro:</center></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    tipoEquipos.length > 0 && tipoEquipos.map((tipoEquipo, index) => {
+                                        return (
+                                                <tr>
+                                                <th scope="row">{index + 1}</th>
+                                                <td>{tipoEquipo.nombre}</td>
+                                                <td>{tipoEquipo.estado}</td>
+                                                <td></td>
+                                                <td>  
+                                                    <center><Link to={`tipos/edit/${tipoEquipo._id}`}>Editar...</Link></center>    
+                                                </td>
+                                                </tr> 
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>    
                     </div>
                 </div>
             </div>

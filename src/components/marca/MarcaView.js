@@ -131,46 +131,43 @@ export const MarcaView = () => {
                     <div>
                         <hr></hr>
                     </div>
-                    <div>
-                    
-                    <table className="table">
-                        <thead>
-                            <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Nombre:</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th scope="col">Estado:</th>
-                            
-                            
-                            <th scope="col"><center>Modificar/Eliminar registro:</center></th>
-                            </tr>
-                        </thead>
-                            {
-                                marcas.map((marca) => {
-                                    return (
-                                        <tbody>
-                                            <tr>
-                                            <th scope="row">
-                                                    
-                                            </th>
-                                            <td>{marca.nombre}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>{marca.estado}</td>
-                                            <td>  
-                                                <center><Link to={`marcas/edit/${marca._id}`}>Editar...</Link></center>    
-                                            </td>
-                                            </tr> 
-                                        </tbody>
-                                    )
-                                })
-                            }
-                    </table>    
+                    <div className="scrollme">
+                        <table className="table table-stripped">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre:</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th scope="col">Estado:</th>
+                                
+                                
+                                <th scope="col"><center>Modificar/Eliminar registro:</center></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    marcas.length > 0 &&  marcas.map((marca, index) => {
+                                        return (
+                                                <tr>
+                                                <th scope="row">{index + 1}</th>
+                                                <td>{marca.nombre}</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>{marca.estado}</td>
+                                                <td>  
+                                                    <center><Link to={`marcas/edit/${marca._id}`}>Editar...</Link></center>    
+                                                </td>
+                                                </tr> 
+                                        )
+                                    })
+                                }
+                            </tbody>    
+                        </table>    
                     </div>
                 </div>
             </div>

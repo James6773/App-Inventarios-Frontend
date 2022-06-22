@@ -141,42 +141,37 @@ export const UsuarioView = () => {
                     <div>
                         <hr></hr>
                     </div>
-                    <div>
-                    
-                    <table className="table">
-                        <thead>
-                            <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Nombre:</th>
-                            <th scope="col">Email:</th>
-                            <th scope="col">Estado:</th>
-                            <th scope="col"></th>
-                            <th scope="col"><center>Modificar/Eliminar registro:</center></th>
-                            </tr>
-                        </thead>
-                            {
-                                usuarios.map((usuario) => {
-                                    return (
-                                        <tbody>
-                                            <tr>
-                                            <th scope="row">
-                                            {
-                                                
-                                            }       
-                                            </th>
-                                            <td>{usuario.nombre}</td>
-                                            <td>{usuario.email}</td>
-                                            <td>{usuario.estado}</td>
-                                            <td></td>
-                                            <td>  
-                                                <center><Link to={`usuarios/edit/${usuario._id}`}>Editar...</Link></center>    
-                                            </td>
-                                            </tr> 
-                                        </tbody>
-                                    )
-                                })
-                            }
-                    </table>    
+                    <div className="scrollme">
+                        <table className="table table-stripped">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre:</th>
+                                <th scope="col">Email:</th>
+                                <th scope="col">Estado:</th>
+                                <th scope="col"></th>
+                                <th scope="col"><center>Modificar/Eliminar registro:</center></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                usuarios.length > 0 && usuarios.map((usuario, index) => {
+                                        return (
+                                                <tr>
+                                                <th scope="row">{index + 1}</th>
+                                                <td>{usuario.nombre}</td>
+                                                <td>{usuario.email}</td>
+                                                <td>{usuario.estado}</td>
+                                                <td></td>
+                                                <td>  
+                                                    <center><Link to={`usuarios/edit/${usuario._id}`}>Editar...</Link></center>    
+                                                </td>
+                                                </tr> 
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>    
                     </div>
                 </div>
             </div>
