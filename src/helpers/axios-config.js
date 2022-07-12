@@ -7,3 +7,7 @@ const axiosInstance = axios.create ({
 export {
     axiosInstance
 }
+
+//https://localhost:4000/
+
+//https://inventory-web-backend.herokuapp.com/
