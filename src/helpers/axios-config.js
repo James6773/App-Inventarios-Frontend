@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create ({
-    baseURL: 'https://inventory-web-backend.herokuapp.com/'
+    baseURL: 'http://localhost:4000/'
 });
 
 export {
     axiosInstance
 }
 
-//https://localhost:4000/
+//http://localhost:4000/
 
 //https://inventory-web-backend.herokuapp.com/
